@@ -57,7 +57,7 @@ public class ControlPanel extends JPanel {
             }
         });
 
-        // Zapis / odczyt
+        // Zapis i odczyt
         saveBtn.addActionListener(e -> {
             JFileChooser fc = new JFileChooser();
             if (fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION)

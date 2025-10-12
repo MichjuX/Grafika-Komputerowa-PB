@@ -13,10 +13,6 @@ public abstract class ShapeObject implements Serializable {
     public abstract void resize(Point a, Point b);
     public abstract void scale(Point from, Point to);
 
-    protected boolean isNear(Point a, Point b, int range) {
-        return Math.abs(a.x - b.x) < range && Math.abs(a.y - b.y) < range;
-    }
-
     public void setSelected(boolean selected) {
         this.selected = selected;
     }

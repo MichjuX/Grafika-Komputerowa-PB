@@ -93,30 +93,6 @@ public class Main extends JFrame {
             g2.translate(offsetX, offsetY);
             g2.scale(zoom, zoom);
             g2.drawImage(image, 0, 0, null);
-
-//            if (zoom >= 8) {
-//                g2.setFont(new Font("Consolas", Font.PLAIN, (int) (12 / zoom + 8)));
-//
-//                // oblicz widoczny zakres pikseli
-//                Rectangle clip = g2.getClipBounds();
-//                int startX = Math.max(0, (int) (clip.x / zoom));
-//                int startY = Math.max(0, (int) (clip.y / zoom));
-//                int endX = Math.min(image.getWidth(), (int) ((clip.x + clip.width) / zoom) + 1);
-//                int endY = Math.min(image.getHeight(), (int) ((clip.y + clip.height) / zoom) + 1);
-//
-//                // rysuj tylko widoczne piksele
-//                for (int y = startY; y < endY; y++) {
-//                    for (int x = startX; x < endX; x++) {
-//                        int rgb = image.getRGB(x, y);
-//                        int r = (rgb >> 16) & 0xFF;
-//                        int gcol = (rgb >> 8) & 0xFF;
-//                        int b = rgb & 0xFF;
-//
-//                        g2.setColor(Color.BLACK);
-//                        g2.drawString(String.format("%d,%d,%d", r, gcol, b), x + 0.1f, y + 0.9f);
-//                    }
-//                }
-//            }
             g2.dispose();
         }
 
@@ -195,22 +171,7 @@ public class Main extends JFrame {
         }
     }
 
-    private void updateImageDisplay() {
-        if (image == null) {
-            imageLabel.setIcon(null);
-            return;
-        }
-        int w = (int) (image.getWidth() * zoom);
-        int h = (int) (image.getHeight() * zoom);
-        Image scaled = image.getScaledInstance(w, h, Image.SCALE_FAST);
-
-        ImageIcon icon = new ImageIcon(scaled);
-        imageLabel.setIcon(icon);
-        imageLabel.setBounds(offsetX, offsetY, w, h);
-        imageLabel.repaint();
-    }
-
-    // ---------------- PPM -------------------
+    // PPM
     private BufferedImage readPPM(File f) throws IOException {
         try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(f));
              PushbackInputStream pis = new PushbackInputStream(bis, 1)) {

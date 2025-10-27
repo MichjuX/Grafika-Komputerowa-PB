@@ -171,7 +171,7 @@ public class Main extends JFrame {
         }
     }
 
-    // PPM
+    //  PPM
     private BufferedImage readPPM(File f) throws IOException {
         try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(f));
              PushbackInputStream pis = new PushbackInputStream(bis, 1)) {

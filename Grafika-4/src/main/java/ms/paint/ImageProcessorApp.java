@@ -25,13 +25,10 @@ public class ImageProcessorApp extends JFrame {
     private JScrollPane scrollPane;
     private JPanel mainControlPanel;
 
-    // Kontrolki dla sekcji A i eksportu
     private JTextField valueField;
     private JTextField factorField;
     private JSlider compressionSlider;
     private JLabel qualityLabel;
-
-    // Kontrolka dla funkcji zoom
     private double zoomFactor = 1.0;
 
     public ImageProcessorApp() {
@@ -53,14 +50,12 @@ public class ImageProcessorApp extends JFrame {
         addPointTransformationControls();
         addConvolutionFilterControls();
         addExportControls();
-        addZoomControls(); // Nowa sekcja Zoom
+        addZoomControls();
 
         pack();
         setSize(1400, 900);
         setLocationRelativeTo(null);
     }
-
-    // --- Metody pomocnicze GUI i Logika Obrazu ---
 
     private JPanel createTitledPanel(String title) {
         JPanel panel = new JPanel();
@@ -107,20 +102,17 @@ public class ImageProcessorApp extends JFrame {
         }
     }
 
-    // *** ZMODYFIKOWANA metoda displayImage - obsługa zoomu ***
     private void displayImage(BufferedImage image) {
         if (image != null) {
             int newWidth = (int) (image.getWidth() * zoomFactor);
             int newHeight = (int) (image.getHeight() * zoomFactor);
 
-            // Skalowanie obrazu dla wyświetlenia
             Image scaledImage = image.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
 
             ImageIcon icon = new ImageIcon(scaledImage);
             imageLabel.setIcon(icon);
             imageLabel.setText("");
 
-            // Wymuszanie odświeżenia ScrollPane i JLabel
             imageLabel.setPreferredSize(new Dimension(newWidth, newHeight));
             imageLabel.revalidate();
             imageLabel.repaint();

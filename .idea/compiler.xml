@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Grafika-2" />
+        <module name="Grafika-3-1" />
+        <module name="Grafika-5" />
+        <module name="Grafika-3-2" />
+        <module name="Grafika-4" />
+        <module name="Grafika-1" />
+        <module name="Grafika-7" />
+        <module name="Grafika-6" />
+        <module name="Grafika-8" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

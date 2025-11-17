@@ -20,7 +20,7 @@ public class GeometricTransformations extends JFrame {
     private JTextArea taPolyCoords; // Ręczne definiowanie figury
 
     public GeometricTransformations() {
-        super("Transformacje 2D - Współrzędne Jednorodne");
+        super("Transformacje 2D");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 700);
         setLocationRelativeTo(null);
@@ -53,6 +53,7 @@ public class GeometricTransformations extends JFrame {
         // --- SEKCJA: RĘCZNE TWORZENIE FIGURY ---
         panel.add(new JLabel("--- DEFINIOWANIE FIGURY ---"));
         panel.add(new JLabel("Format: x1 y1 x2 y2 ..."));
+        panel.add(new JLabel("100 100 200 100 150 200"));
         taPolyCoords = new JTextArea(3, 20);
         panel.add(new JScrollPane(taPolyCoords));
         JButton btnAddPoly = new JButton("Dodaj Figurę z tekstu");

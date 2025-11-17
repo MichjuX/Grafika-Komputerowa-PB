@@ -1,3 +1,5 @@
+package ms.paint;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -322,7 +324,9 @@ class HistogramPanel extends JPanel {
     }
 }
 
-// --- Algorytmy (Bez zmian - ta sama logika co poprzednio) ---
+
+
+// Algorytmy
 class ImageAlgorithms {
     public static BufferedImage toGrayscale(BufferedImage src) {
         BufferedImage res = new BufferedImage(src.getWidth(), src.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
